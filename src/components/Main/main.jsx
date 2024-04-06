@@ -5,6 +5,13 @@ import { Context } from '../../context/context';
 
 const Main = (props) => {
     const {onsent,recentPrompt,showResult,loading,resultData,setInput,input}= useContext(Context)
+
+    const handleClick = (event) => {
+		const paraText = event.target.textContent
+		console.log(paraText)
+		onsent(paraText)
+	}
+
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
           onsent();
@@ -25,19 +32,19 @@ const Main = (props) => {
                 <p>How can I help you today?</p>
             </div>
             <div className="cards">
-                <div className="card">
+                <div className="card" onClick={handleClick}>
                     <p>suggest beautiful place to see on an upcoming road trip</p>
                     <img src={assets.compass_icon} alt="" />
                 </div>
-                <div className="card">
+                <div className="card" onClick={handleClick}>
                     <p>Briefly summarize this concept: urban planning</p>
                     <img src={assets.bulb_icon} alt="" />
                 </div>
-                <div className="card">
+                <div className="card" onClick={handleClick}>
                     <p>Brainstorm team bonding activities for our work retreat</p>
                     <img src={assets.message_icon} alt="" />
                 </div>
-                <div className="card">
+                <div className="card" onClick={handleClick}>
                     <p>Improve the readability of the following code</p>
                     <img src={assets.code_icon} alt="" />
                 </div>
