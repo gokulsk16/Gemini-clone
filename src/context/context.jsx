@@ -24,7 +24,7 @@ export const Context=createContext();
     }
 
     const onsent= async (prompt)=>{
-        setResultData("")
+        setResultData("") 
         setLoading(true)
         setShowResult(true)
         let response;
